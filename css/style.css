@@ -1,0 +1,392 @@
+/* --- Root Variables Customizing Exact Color Palette --- */
+:root {
+    --primary-blue: #2563EB;
+    --dark-bg: #050B1F;
+    --secondary-dark: #0B1228;
+    --purple: #7C3AED;
+    --white: #FFFFFF;
+    --light-bg: #F8FAFC;
+    --text-gray: #64748B;
+    --accent-glow: rgba(37, 99, 235, 0.25);
+    --purple-glow: rgba(124, 58, 237, 0.2);
+}
+
+/* --- Global Reset & Settings --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+body {
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background-color: var(--white);
+    color: var(--secondary-dark);
+    overflow-x: hidden;
+}
+.section-padding {
+    padding: 100px 0;
+}
+.bg-light-section {
+    background-color: var(--light-bg);
+}
+.text-gray {
+    color: var(--text-gray);
+}
+.bg-purple {
+    background-color: var(--purple) !important;
+}
+.text-purple {
+    color: var(--purple) !important;
+}
+.fs-7 {
+    font-size: 0.85rem;
+}
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+.style-label {
+    min-width: 90px;
+}
+.line-height-relaxed {
+    line-height: 1.65;
+}
+
+/* --- Navigation Module --- */
+.navbar {
+    background-color: var(--dark-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+}
+.logo-box {
+    width: 38px;
+    height: 38px;
+    border: 2px solid var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 4px;
+}
+.brand-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    color: var(--white);
+    line-height: 1.2;
+}
+.brand-subtitle {
+    font-size: 0.72rem;
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 6px 15px !important;
+    position: relative;
+    transition: color 0.25s ease;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--white);
+}
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+}
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* --- Hero Module --- */
+.hero-section {
+    background-color: var(--dark-bg);
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+/* Cyberpunk / Digital Grid Decorative Background Mock */
+.circuit-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: 
+        radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 0),
+        radial-gradient(rgba(124, 58, 237, 0.08) 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    opacity: 0.85;
+}
+/* Abstract Line Generator simulation mimicking screenshot nodes */
+.circuit-bg::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: -10%;
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+    z-index: 1;
+}
+.z-index-2 {
+    z-index: 2;
+}
+.hero-subtitle {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.hero-title {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+}
+.hero-role {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+.hero-desc {
+    max-width: 520px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+/* Interactive Button Custom Styles matching screenshots */
+.btn-primary-custom {
+    background-color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+    color: var(--white);
+    padding: 10px 24px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px var(--accent-glow);
+}
+.btn-primary-custom:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+.btn-outline-custom {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    padding: 10px 24px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.btn-outline-custom:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--white);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+/* Double Circular Border Ring Glow Effects */
+.profile-image-container {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    padding: 12px;
+    border: 1px dashed rgba(37, 99, 235, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px var(--accent-glow);
+}
+.glow-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--primary-blue);
+    top: 0;
+    left: 0;
+    animation: pulseGlow 4s infinite alternate;
+}
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-dark);
+    z-index: 2;
+}
+
+/* --- Dynamic Section Headings --- */
+.section-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--secondary-dark);
+}
+
+/* --- Card Base Modifications --- */
+.card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* --- Education Badge --- */
+.cgpa-badge {
+    background-color: #EFF6FF;
+    border: 1px solid #DBEAFE;
+    min-width: 110px;
+}
+
+/* --- Horizontal / Vertical Timelines --- */
+.timeline {
+    border-left: 2px solid #E2E8F0;
+}
+.timeline-item {
+    padding-left: 15px;
+}
+.timeline-marker {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    border: 2px solid var(--white);
+    left: -22px;
+    top: 6px;
+    outline: 4px solid #EFF6FF;
+}
+
+/* --- Skill Element Customizations --- */
+.progress {
+    background-color: #E2E8F0;
+    overflow: visible;
+}
+.progress-bar {
+    background-color: var(--primary-blue);
+    transition: width 1s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+/* --- Project Thumbnails --- */
+.project-thumb {
+    height: 190px;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+/* --- Certifications Node Boxes --- */
+.cert-logo-box {
+    height: 60px;
+    width: 60px;
+}
+
+/* --- Swiper Extension Style Syncs --- */
+.testimonial-swiper .swiper-pagination-bullet-active {
+    background: var(--primary-blue);
+    width: 18px;
+    border-radius: 4px;
+}
+
+/* --- Full-width Gradient Banner --- */
+.resume-cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--purple) 100%);
+    position: relative;
+}
+.btn-light-custom {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border: 0;
+    transition: all 0.25s ease;
+}
+.btn-light-custom:hover {
+    background-color: #F8FAFC;
+    color: var(--purple);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Form Field Modifications --- */
+.form-control:focus {
+    background-color: var(--white) !important;
+    border-color: var(--primary-blue) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* --- Footer Infrastructure --- */
+.footer-section {
+    background-color: var(--dark-bg);
+}
+.logo-box-footer {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+}
+.social-icon-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.social-icon-btn:hover {
+    background-color: var(--primary-blue) !important;
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+.footer-links a:hover {
+    color: var(--white) !important;
+}
+
+/* --- Animations --- */
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.03); opacity: 1; box-shadow: 0 0 50px rgba(37, 99, 235, 0.4); }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--dark-bg);
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-section {
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .profile-image-container {
+        width: 260px;
+        height: 260px;
+    }
+    .section-padding {
+        padding: 60px 0;
+    }
+}
